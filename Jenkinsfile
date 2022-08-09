@@ -6,7 +6,7 @@ pipeline {
         stage('Xray Initialization'){
             steps{
                 script {
-                    rtServer = Artifactory.newServer url: 'http://localhost:8082/', username: admin , password: %40%24ID%26bHA786
+                    rtServer = Artifactory.newServer url: 'http://localhost:8082/', username: "admin" , password: "%40%24ID%26bHA786"
                     buildInfo = Artifactory.newBuildInfo()
                 }
             }
