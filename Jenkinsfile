@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                        echo ***** PERFORM BUILD AND UPLOAD TO ARTIFACTIORY HERE ****
+                        echo "PERFORM BUILD AND UPLOAD TO ARTIFACTIORY HERE"
                         buildName: env.JOB_NAME,
                         buildNumber: BUILD_NUMBER
                     )
