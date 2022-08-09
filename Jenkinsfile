@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                         echo "PERFORM BUILD AND UPLOAD TO ARTIFACTIORY HERE"
-                        buildName: env.JOB_NAME,
+                        buildName: ${env.JOB_NAME},
                         buildNumber: BUILD_NUMBER
                     )
                 }
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 rtPublishBuildInfo (
                     serverId : 'server',
-                    buildName : env.JOB_NAME,
+                    buildName : ${env.JOB_NAME},
                     buildNumber : BUILD_NUMBER
                 )
             }
@@ -52,7 +52,7 @@ pipeline {
                 script{
                    xrayScan (
                         serverId :   "server",
-                        buildName    : env.JOB_NAME,
+                       buildName    : ${env.JOB_NAME},
                         buildNumber : BUILD_NUMBER,
                         failBuild    : false
                     )
